@@ -2,11 +2,12 @@
 
 ```
 ██████╗  █████╗ ██████╗ ██╗██╗  ██╗
-██╔══██╗██╔══██╗██╔══██╗██║██║ ██╔╝
-██████╔╝███████║██████╔╝██║█████╔╝ 
-██╔═══╝ ██╔══██║██╔═══╝ ██║██╔═██╗ 
-██║     ██║  ██║██║     ██║██║  ██╗
-╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
+██╔══██╗██╔══██╗██╔══██╗██║╚██╗██╔╝
+██████╔╝███████║██║  ██║██║ ╚███╔╝ 
+██╔══██╗██╔══██║██║  ██║██║ ██╔██╗ 
+██║  ██║██║  ██║██████╔╝██║██╔╝ ██╗
+╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝
+                                   
 ```
 
 **Search at the root.**
@@ -19,7 +20,7 @@
 
 ---
 
-## 🔍 Demo
+## Demo
 
 ```bash
 $ radix search "example query"
@@ -37,7 +38,15 @@ Results:
 
 ---
 
-## ⚙️ How it Works
+## Philosophy
+
+Elasticsearch is overkill for a laptop. `grep` is too slow for large codebases. Radix is the middle ground: a local-first, lightweight search tool that balances speed and simplicity.
+
+---
+
+## How it Works
+
+Radix doesn't spin up a server. It sits on top of SQLite's FTS5 engine. It's just files and an index.
 
 ```mermaid
 graph TD
@@ -48,7 +57,7 @@ graph TD
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 | Step       | Command                          | Description                     |
 |------------|----------------------------------|---------------------------------|
@@ -58,7 +67,13 @@ graph TD
 
 ---
 
-## 🤔 Why Radix?
+## Why Radix?
+
+Radix follows the Unix Philosophy: Do one thing well. It provides fast, local-first search without unnecessary complexity.
+
+---
+
+## Honest Comparison
 
 | Feature                | Radix         | Elasticsearch | Ripgrep       |
 |------------------------|---------------|---------------|---------------|
@@ -67,10 +82,11 @@ graph TD
 | **Full-text search**   | ✅            | ✅            | ❌            |
 | **No external servers**| ✅            | ❌            | ✅            |
 | **Customizable**       | ✅            | ✅            | ❌            |
+| **Distributed Search** | ❌            | ✅            | ❌            |
 
 ---
 
-## 🛠️ Indexing Pipeline
+## Indexing Pipeline
 
 ```mermaid
 flowchart LR
@@ -83,7 +99,7 @@ flowchart LR
 
 ---
 
-## 🔎 Search Logic
+## Search Logic
 
 ```mermaid
 sequenceDiagram
@@ -103,7 +119,7 @@ sequenceDiagram
 ---
 
 <details>
-<summary>⚙️ Advanced Config</summary>
+<summary>Advanced Config</summary>
 
 ### Advanced Configuration
 
