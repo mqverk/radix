@@ -1,0 +1,10 @@
+# Ignore temporary files
+*.tmp
+*.bak
+
+# Ignore logs
+*.log
+
+# Ignore specific directories
+node_modules/
+venv/
