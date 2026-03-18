@@ -1,0 +1,1 @@
+# Placeholder for inverted file (IVF) index implementation
