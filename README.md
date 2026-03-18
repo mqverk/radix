@@ -70,6 +70,38 @@ graph TD
 
 ---
 
+## 🛠️ Indexing Pipeline
+
+```mermaid
+flowchart LR
+    A[Source: Local Filesystem] -->|stream| B[Processor: File Walker & Filter]
+    B -->|extract| C[Engine: Text Extractor]
+    subgraph Core Engine
+        C -->|index| D[Storage: SQLite FTS5 Core]
+    end
+```
+
+---
+
+## 🔎 Search Logic
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant CLI
+    participant QueryParser
+    participant Database
+
+    User->>CLI: Type search query
+    CLI->>QueryParser: Sanitize input
+    QueryParser->>Database: Build and execute SQL query
+    Database-->>QueryParser: Return matching rows
+    QueryParser->>CLI: Format results with colors
+    CLI-->>User: Display results
+```
+
+---
+
 <details>
 <summary>⚙️ Advanced Config</summary>
 
